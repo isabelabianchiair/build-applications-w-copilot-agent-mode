@@ -1,0 +1,257 @@
+/* OctoFit Tracker Custom Styles */
+
+/* Custom CSS Variables for Consistent Theming */
+:root {
+  --octofit-primary: #0d6efd;
+  --octofit-secondary: #6c757d;
+  --octofit-success: #198754;
+  --octofit-info: #0dcaf0;
+  --octofit-warning: #ffc107;
+  --octofit-danger: #dc3545;
+  --octofit-light: #f8f9fa;
+  --octofit-dark: #212529;
+  --octofit-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --border-radius: 8px;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Global Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Avatar Circles */
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.team-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Enhanced Card Styles */
+.card {
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+/* Team and Workout Card Special Styling */
+.team-card:hover, 
+.workout-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Enhancements */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* Table Enhancements */
+.table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.table th {
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Badge Enhancements */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+}
+
+/* Button Enhancements */
+.btn {
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-lg {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Loading and Empty State Styles */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .btn-group .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+  
+  .avatar-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Utility Classes */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.border-start-primary {
+  border-left: 4px solid var(--octofit-primary) !important;
+}
+
+.border-start-success {
+  border-left: 4px solid var(--octofit-success) !important;
+}
+
+.border-start-warning {
+  border-left: 4px solid var(--octofit-warning) !important;
+}
+
+.border-start-danger {
+  border-left: 4px solid var(--octofit-danger) !important;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-top: 1px solid #dee2e6;
+}
+
+/* Custom Focus States */
+.btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .btn,
+  footer {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+  }
+}
