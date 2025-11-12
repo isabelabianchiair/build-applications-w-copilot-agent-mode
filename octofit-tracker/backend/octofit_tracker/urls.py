@@ -30,4 +30,5 @@ def api_root(request):
 urlpatterns = [
     path('', api_root),
     path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]

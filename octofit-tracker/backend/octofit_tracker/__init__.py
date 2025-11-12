@@ -1,0 +1,1 @@
+# Django settings for octofit_tracker project.
